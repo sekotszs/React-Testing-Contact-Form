@@ -11,4 +11,15 @@ const {getByLabelText, getByTestId}= render(<ContactForm/>);
 
 const firstNameInput = getByLabelText(/First Name/i);
 const lastNameInput = getByLabelText(/Last/i);
-const emailInput = getByLabelText(/Email/i); })
+const emailInput = getByLabelText(/Email/i); 
+fireEvent.change(firstNameInput,{target: {name:'firstName', value:'zoe'}
+});
+fireEvent.change(lastNameInput,{target: {name:'lastName', value:'stokes'}
+});
+fireEvent.change(emailInput,{target: {name:'email', value:'sekotszs@gmail.com'}
+});
+const submitButton= getByTestId('submit');
+fireEvent.click(submitButton);
+
+})
+
